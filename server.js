@@ -5,8 +5,9 @@
 var express = require('express');
 var request = require('request');
 var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json()
 var app = express();
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 var iftttId;
 var baseURL = "https://maker.ifttt.com/trigger/";
 var withKey = "/with/key/";
@@ -22,9 +23,9 @@ else
 app.use(express.static('views'));
 
 // Handle requests from IFTTT
-app.post("/", jsonParser, function (request, response) {
+app.post("/", function (req, response) {
   console.log("Request received from IFTTT");
-  console.log("Data: " + jsonParser.body);
+  console.log("Data: " + req.body);
   console.log("Triggering multiple IFTTT services");
   for(var i=0; i<10; i++){
     checkForTrigger(i);
