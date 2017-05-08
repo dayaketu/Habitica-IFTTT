@@ -5,6 +5,9 @@
 var express = require('express');
 var request = require('request');
 var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 var iftttId;
 var baseURL = "https://maker.ifttt.com/trigger/";
 var withKey = "/with/key/";
