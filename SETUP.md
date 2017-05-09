@@ -1,12 +1,18 @@
-There are two stages to setting up multiple triggers in IFTTT:
+In just a few steps, you can set up IFTTT to add a To-Do in Habitica:
 
-# Stage 1: Triggering your Glitch app:
+# Set up the .env file in Glitch
+
+Go to your [Habitica API settings](https://habitica.com/#/options/settings/api) to obtain your user ID and API token. Paste these as the values for `HABITICA_USER` and `HABITICA_API_KEY` in the `.env` file.
+
+For `GLITCH_APP_KEY`, make up a string of letters and numbers you will use in your request to help prevent random people from triggering this action. You can use [random.org](https://www.random.org/passwords/?num=5&len=16&format=html&rnd=new) or a similar site to help you generate this.
+
+# Triggering your Habitica action from IFTTT:
 
 In IFTTT, create a new applet by selecting 'New Applet'.
 
-For the 'if' condition, select whatever service notification you want to initially trigger your Glitch app. I'm going to use 'Button widget' with the ‘button press’ action, so I can trigger things from my iPhone’s lock screen.
+For the 'if' condition, select whatever service notification you want to use to add a To-Do in Habitica. In this example, I used Google Assistant.
 
-For the 'then' condition, search and select 'Maker', and use the 'Make a web request' action. Set the URL to your Glitch project URL - this has the format of '`https://project-name.glitch.me/`', so in this example I used 'https://multi-ifttt-triggers.glitch.me'. Set the Method to '`POST`' and Content Type to '`application/json`'. You don’t need to set anything in the ‘Body’.
+For the 'then' condition, search and select 'Maker', and use the 'Make a web request' action. Set the URL to your Glitch project URL - this has the format of '`https://project-name.glitch.me/`', so in this example I used 'https://habitica-ifttt-action.glitch.me'. Set the Method to '`POST`' and Content Type to '`application/x-www-form-urlencoded`'. 
 
 e.g. ![](https://cdn.glitch.com/4761356a-9369-4e79-9d1e-a8306e8c00b5%2FiftttWebRequestSettings.png)
 
