@@ -25,8 +25,9 @@ Now when that service triggers, Glitch will receive a request. The Glitch app wi
 
 # Some other ideas
 
-Create a To-Do in Habitica when you:
+Create a To-Do in Habitica when:
 
-* Forward an email to IFTTT tagged #habitica
-* Bookmark content in Code School so you'll remember to come back to it
-* 
+* You forward an email to IFTTT tagged #habitica
+* You bookmark content in Code School so you'll remember to come back to it
+* Automatic detects your check engine light has turned on so'll remember to get it checked out
+* Weather Underground reports high pollen levels so you'll remember to take your allergy meds
