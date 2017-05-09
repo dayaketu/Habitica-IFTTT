@@ -21,4 +21,12 @@ In the Body, use the following format to send the title of your To-Do and the `G
 ![Example of creating Maker Webhooks action](https://cdn.glitch.com/98d7e0eb-a328-4feb-9f6b-48eb446dc509%2Fpost-to-glitch.PNG?1494338572116)
 
 
-Now when that service triggers, Glitch will receive a request. The Glitch app will check to make sure that the key you sent matches the `GLITCH_APP_KEY` in your `.env` file, then it will make an API request to Habitica to a
+Now when that service triggers, Glitch will receive a request. The Glitch app will check to make sure that the key you sent matches the `GLITCH_APP_KEY` in your `.env` file, then it will make an API request to Habitica to add a To-Do with the title you specified. Refresh your Tasks and you should see your new To-Do item!
+
+# Some other ideas
+
+Create a To-Do in Habitica when you:
+
+* Forward an email to IFTTT tagged #habitica
+* Bookmark content in Code School so you'll remember to come back to it
+* 
