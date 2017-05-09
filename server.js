@@ -24,7 +24,7 @@ app.post("/", function (request, response) {
     console.log("Done triggering.");
   }
   else {
-    console.log("Bad key, exiting...");   
+    console.log("Bad key, exiting.");   
   }
   response.end();  
 });
