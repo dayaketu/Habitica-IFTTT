@@ -12,29 +12,13 @@ In IFTTT, create a new applet by selecting 'New Applet'.
 
 For the 'if' condition/trigger, select any service you want to use to add a To-Do in Habitica. In this example, I use Google Assistant.
 
+![Example of creating Google Assistant trigger](https://cdn.glitch.com/98d7e0eb-a328-4feb-9f6b-48eb446dc509%2Fadd-via-google.PNG?1494338568356)
+
 For the 'then' condition/action, search for and select 'Maker Webhooks' and use the 'Make a web request' action. Set the URL to your Glitch project URL - this has the format of `https://project-name.glitch.me/`, so in this example I used `https://habitica-ifttt-action.glitch.me`. Set the Method to `POST` and Content Type to `application/x-www-form-urlencoded`. 
 
-e.g. ![Example of creating Google Assistant trigger](https://cdn.glitch.com/98d7e0eb-a328-4feb-9f6b-48eb446dc509%2Fadd-via-google.PNG?1494338568356)
+In the Body, use the following format to send the title of your To-Do and the `GLITCH_APP_KEY` you created in your `.env` file: `title=ingredient-for-title&key=your-key`. In this Google Assistant example, the ingredient I want to use for the title of the task is `TextField`, but the ingredients will be different depending on the trigger you use.
 
-Now when that service triggers, Glitch will receive a request. All that's left now is to get Glitch to then trigger multiple services back in IFTTT.
+![Example of creating Maker Webhooks action](https://cdn.glitch.com/98d7e0eb-a328-4feb-9f6b-48eb446dc509%2Fpost-to-glitch.PNG?1494338572116)
 
-# Stage 2: Setup your Glitch app to trigger multiple services:
 
-From your [Maker settings page](https://ifttt.com/services/maker/settings) in IFTTT, copy and paste the `URL` value for the `IFTTT_MAKER_URL` variable into the `.env` file in your Glitch project.
-
-![](https://cdn.glitch.com/4761356a-9369-4e79-9d1e-a8306e8c00b5%2FiftttMakerURL.png)
-
-Then, for each service that you want your Glitch app to trigger you need to create a new applet in IFTTT. For each one:
-
-- Create a new applet by selecting ‘New Applet’
-
-  For the 'if' condition, search and select 'Maker', and use the 'Receive a web request' action. Set an event name, and set that event name against the `IFTTT_SERVICE_X` variable in the `.env` file in your Glitch project. E.g. if I created an event name called 'lights_on', I would set `IFTTT_SERVICE_1=lights_on` in `.env`.
-
-- For the 'then' condition, search and select whatever service you want to trigger, such as turning on your lights, turning off a plug, sending an email etc. and click ‘finish’ to create the applet.
-
-Repeat for each service. By the end your `.env` file will look a bit like:
-![](https://cdn.glitch.com/4761356a-9369-4e79-9d1e-a8306e8c00b5%2FiftttEnvFile.png)
-
-# The Result
-
-Once done, upon receiving a request your Glitch app will trigger those multiple other triggers in IFTTT. So in this example, when I hit the IFTTT button, my lights go off, the thermostat is set to away, and my cameras are turned on, so I'm all set to go out.
+Now when that service triggers, Glitch will receive a request. The Glitch app will check to make sure that the key you sent matches the `GLITCH_APP_KEY` in your `.env` file, then it will make an API request to Habitica to a
