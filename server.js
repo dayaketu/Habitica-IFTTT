@@ -4,6 +4,7 @@
 // init project
 var express = require('express');
 var request = require('request');
+var querystring = require('querystring');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
@@ -31,17 +32,23 @@ var listener = app.listen(process.env.PORT, function () {
 // Loops through each event and where it finds a value for it in .env it will make a request to IFTTT using it
 function addHabiticaToDo(title){
   // Make a request to baseURL + triggerEvent + withKey + iftttId, which is the complete IFTTT Maker Request URL
-  var form = {
-    'x-api-user': process.env.HABITICA_USER,
-    'x-api-key': process.env.HABITICA_API_KEY
-  };
 
-var formData = querystring.stringify(form);
-  request.setHeader();
-  request.setHeader('x-api-key', process.env.HABITICA_API_KEY);
-   request("https://habitica.com/api/v3/tasks/user", function (error, response, body) {
+  request({
+    headers: {
+      'x-api-user': process.env.HABITICA_USER,
+      'x-api-key': process.env.HABITICA_API_KEY
+    },
+    uri: 'https://habitica.com/api/v3/tasks/user',
+    body: { text: title, type: 'todo' },
+    json: true,
+    method: 'POST'
+  }, function (error, response, body) {
      if (!error && response.statusCode == 200) {
        console.log(body); // Show the response from IFTTT
      }
+    else {
+      console.log(response.statusCode);
+      console.log(body);
+    }
    });
 }
