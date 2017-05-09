@@ -2,7 +2,7 @@ In just a few steps, you can set up IFTTT to add a To-Do in Habitica:
 
 # Set up the .env file in Glitch
 
-Go to your [Habitica API settings](https://habitica.com/#/options/settings/api) to obtain your user ID and API token. Paste these as the values for `HABITICA_USER` and `HABITICA_API_KEY` in the `.env` file.
+Go to your [Habitica API settings](https://habitica.com/#/options/settings/api) to obtain your user ID and API token. Paste these as the values for `HABITICA_USER` and `HABITICA_API_KEY` in the `.env` file. The `.env` file is private and only visible to you unless you specifically invite a collaborator to edit your code.
 
 For `GLITCH_APP_KEY`, make up a string of letters and numbers you will use in your request to help prevent random people from triggering this action. You can use [random.org](https://www.random.org/passwords/?num=5&len=16&format=html&rnd=new) or a similar site to help you generate this.
 
