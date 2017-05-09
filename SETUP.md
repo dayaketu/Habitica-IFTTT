@@ -6,15 +6,15 @@ Go to your [Habitica API settings](https://habitica.com/#/options/settings/api) 
 
 For `GLITCH_APP_KEY`, make up a string of letters and numbers you will use in your request to help prevent random people from triggering this action. You can use [random.org](https://www.random.org/passwords/?num=5&len=16&format=html&rnd=new) or a similar site to help you generate this.
 
-# Triggering your Habitica action from IFTTT:
+# Triggering your Habitica action from IFTTT
 
 In IFTTT, create a new applet by selecting 'New Applet'.
 
-For the 'if' condition, select whatever service notification you want to use to add a To-Do in Habitica. In this example, I used Google Assistant.
+For the 'if' condition/trigger, select any service you want to use to add a To-Do in Habitica. In this example, I use Google Assistant.
 
-For the 'then' condition, search and select 'Maker', and use the 'Make a web request' action. Set the URL to your Glitch project URL - this has the format of '`https://project-name.glitch.me/`', so in this example I used 'https://habitica-ifttt-action.glitch.me'. Set the Method to '`POST`' and Content Type to '`application/x-www-form-urlencoded`'. 
+For the 'then' condition/action, search for and select 'Maker Webhooks' and use the 'Make a web request' action. Set the URL to your Glitch project URL - this has the format of `https://project-name.glitch.me/`, so in this example I used `https://habitica-ifttt-action.glitch.me`. Set the Method to `POST` and Content Type to `application/x-www-form-urlencoded`. 
 
-e.g. ![](https://cdn.glitch.com/4761356a-9369-4e79-9d1e-a8306e8c00b5%2FiftttWebRequestSettings.png)
+e.g. ![Example of creating Google Assistant trigger](https://cdn.glitch.com/98d7e0eb-a328-4feb-9f6b-48eb446dc509%2Fadd-via-google.PNG?1494338568356)
 
 Now when that service triggers, Glitch will receive a request. All that's left now is to get Glitch to then trigger multiple services back in IFTTT.
 
