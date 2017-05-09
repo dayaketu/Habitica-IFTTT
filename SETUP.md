@@ -29,5 +29,5 @@ Create a To-Do in Habitica when:
 
 * You forward an email to IFTTT tagged #habitica
 * You bookmark content in Code School so you'll remember to come back to it
-* Automatic detects your check engine light has turned on so'll remember to get it checked out
+* Automatic detects your check engine light has turned on so you'll remember to get it checked out
 * Weather Underground reports high pollen levels so you'll remember to take your allergy meds
