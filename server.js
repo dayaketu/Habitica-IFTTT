@@ -43,7 +43,8 @@ function addHabiticaToDo(title){
       'x-api-key': process.env.HABITICA_API_KEY
     },
     uri: 'https://habitica.com/api/v3/tasks/user',
-    body: { text: title, type: 'todo', priority:2 },
+    //body: { text: title, type: 'todo', priority:2 },
+    body: { text: title, type: 'todo' },
     json: true,
     method: 'POST'
   }, function (error, response, body) {
